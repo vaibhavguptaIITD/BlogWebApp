@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="blog-package" extends="struts-default" namespace="/blog">
+		<action name="mainPage" class="com.vaibhav.action.BlogController">
+			<result name="success">
+				/WEB-INF/content/blog/_mainPage.jsp
+			</result>	
+		</action>
+	</package>
+	<package name="home" extends="struts-default" namespace="/">
+		<action name="project" class="com.vaibhav.action.ProjectController">
+			<result name="success">
+				/WEB-INF/content/project/project.jsp
+			</result>
+		</action>
+	</package>
+	<package name="project" extends="struts-default" namespace="/projects">
+		<action name="serverEvent" class="com.vaibhav.action.ServerSentEvent">
+			<result name="success">
+				/WEB-INF/content/project/projectFiles/message.jsp
+			</result>
+		</action>
+	</package>
+</struts>
